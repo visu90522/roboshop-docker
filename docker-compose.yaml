@@ -6,27 +6,27 @@ services:
     image: mongodb:v1
     container_name: mongodb
     networks:
-      - roboshop
+    - roboshop
   catalogue:
     image: catalogue:v1
     container_name: catalogue
     networks:
-      - roboshop
+    - roboshop
     depends_on:
-      - mongodb
+    - mongodb
   redis:
     image: redis
     container_name: redis
     networks:
-      - roboshop
+    - roboshop
   user:
     image: user:v1
     container_name: user
     networks:
-      - roboshop
+    - roboshop
     depends_on:
-      - mongodb
-      - redis
+    - mongodb
+    - redis
   web:
     image: web:v1
     container_name: web
@@ -35,5 +35,5 @@ services:
     ports:
     - "80:80"
     depends_on:
-      - catalogue
-      - user
+    - catalogue
+    - user
