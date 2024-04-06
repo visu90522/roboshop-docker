@@ -42,6 +42,7 @@ services:
     - roboshop
     ports:
     - "80:80"
+    restart: true
     depends_on:
     - catalogue
     - user
